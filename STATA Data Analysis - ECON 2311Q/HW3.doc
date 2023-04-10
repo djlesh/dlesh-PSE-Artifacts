@@ -1,0 +1,26 @@
+{\rtf1\fs24
+\trowd\trgaph75\trleft-75\intbl\trqc\clbrdrt\brdrs\cellx1872\clbrdrt\brdrs\cellx3600\clbrdrt\brdrs\cellx5328\clbrdrt\brdrs\cellx7056
+\ql \cell\qc (1)\cell\qc (2)\cell\qc (3)\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx1872\cellx3600\cellx5328\cellx7056
+\trowd\trgaph75\trleft-75\trqc\clbrdrb\brdrs\cellx1872\clbrdrb\brdrs\cellx3600\clbrdrb\brdrs\cellx5328\clbrdrb\brdrs\cellx7056
+\ql VARIABLES\cell\qc birthweight\cell\qc birthweight\cell\qc birthweight\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx1872\cellx3600\cellx5328\cellx7056
+\ql \cell\qc \cell\qc \cell\qc \cell\row
+\ql smoker\cell\qc -253.2***\cell\qc -217.6***\cell\qc -175.4***\cell\row
+\ql \cell\qc (26.81)\cell\qc (26.11)\cell\qc (26.83)\cell\row
+\ql alcohol\cell\qc \cell\qc -30.49\cell\qc -21.08\cell\row
+\ql \cell\qc \cell\qc (72.60)\cell\qc (72.99)\cell\row
+\ql nprevist\cell\qc \cell\qc 34.07***\cell\qc 29.60***\cell\row
+\ql \cell\qc \cell\qc (3.608)\cell\qc (3.583)\cell\row
+\ql unmarried\cell\qc \cell\qc \cell\qc -187.1***\cell\row
+\ql \cell\qc \cell\qc \cell\qc (27.68)\cell\row
+\ql Constant\cell\qc 3,432***\cell\qc 3,051***\cell\qc 3,134***\cell\row
+\ql \cell\qc (11.89)\cell\qc (43.71)\cell\qc (44.15)\cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\row
+\ql Observations\cell\qc 3,000\cell\qc 3,000\cell\qc 3,000\cell\row
+\trowd\trgaph75\trleft-75\trqc\trbrdrb\brdrs\clbrdrb\brdrs\cellx1872\clbrdrb\brdrs\cellx3600\clbrdrb\brdrs\cellx5328\clbrdrb\brdrs\cellx7056
+\ql R-squared\cell\qc 0.029\cell\qc 0.073\cell\qc 0.089\cell\row
+\pard\qc
+Robust standard errors in parentheses\par
+*** p<0.01, ** p<0.05, * p<0.1\par
+}

@@ -1,0 +1,18 @@
+	(1)	(2)	(3)
+VARIABLES	birthweight	birthweight	birthweight
+			
+smoker	-253.2***	-217.6***	-175.4***
+	(26.81)	(26.11)	(26.83)
+alcohol		-30.49	-21.08
+		(72.60)	(72.99)
+nprevist		34.07***	29.60***
+		(3.608)	(3.583)
+unmarried			-187.1***
+			(27.68)
+Constant	3,432***	3,051***	3,134***
+	(11.89)	(43.71)	(44.15)
+			
+Observations	3,000	3,000	3,000
+R-squared	0.029	0.073	0.089
+Robust standard errors in parentheses			
+*** p<0.01, ** p<0.05, * p<0.1			

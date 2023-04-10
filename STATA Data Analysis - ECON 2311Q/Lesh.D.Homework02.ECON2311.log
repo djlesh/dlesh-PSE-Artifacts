@@ -1,0 +1,3424 @@
+--------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/daniellesh/Desktop/ECON2311/Homework/Lesh.D.Homework02.ECON2
+> 311.log
+  log type:  text
+ opened on:  30 Nov 2020, 22:10:51
+
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. log using Lesh.D.Homework03.ECON2311.log, replace 
+log file already open
+r(604);
+
+end of do-file
+
+r(604);
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. * 1 
+. reg birthweight smoker 
+
+      Source |       SS           df       MS      Number of obs   =     3,000
+-------------+----------------------------------   F(1, 2998)      =     88.28
+       Model |    30080336         1    30080336   Prob > F        =    0.0000
+    Residual |  1.0215e+09     2,998  340740.383   R-squared       =    0.0286
+-------------+----------------------------------   Adj R-squared   =    0.0283
+       Total |  1.0516e+09     2,999  350656.887   Root MSE        =    583.73
+
+------------------------------------------------------------------------------
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.95149    -9.40   0.000    -306.0736   -200.3831
+       _cons |    3432.06    11.8709   289.12   0.000     3408.784    3455.336
+------------------------------------------------------------------------------
+
+. 
+. *2 
+. reg birthweight smoker alcohol nprevist 
+
+      Source |       SS           df       MS      Number of obs   =     3,000
+-------------+----------------------------------   F(3, 2996)      =     78.47
+       Model |  76610831.2         3  25536943.7   Prob > F        =    0.0000
+    Residual |   975009173     2,996  325436.974   R-squared       =    0.0729
+-------------+----------------------------------   Adj R-squared   =    0.0719
+       Total |  1.0516e+09     2,999  350656.887   Root MSE        =    570.47
+
+------------------------------------------------------------------------------
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801    26.6796    -8.16   0.000    -269.8923   -165.2679
+     alcohol |  -30.49129   76.23405    -0.40   0.689    -179.9677    118.9851
+    nprevist |   34.06991   2.854994    11.93   0.000     28.47197    39.66786
+       _cons |   3051.249   34.01596    89.70   0.000     2984.552    3117.946
+------------------------------------------------------------------------------
+
+. 
+. *3 
+. reg birthweight smoker alcohol nprevist unmarried 
+
+      Source |       SS           df       MS      Number of obs   =     3,000
+-------------+----------------------------------   F(4, 2995)      =     72.79
+       Model |  93178967.1         4  23294741.8   Prob > F        =    0.0000
+    Residual |   958441037     2,995  320013.702   R-squared       =    0.0886
+-------------+----------------------------------   Adj R-squared   =    0.0874
+       Total |  1.0516e+09     2,999  350656.887   Root MSE        =     565.7
+
+------------------------------------------------------------------------------
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769   27.09873    -6.47   0.000    -228.5109   -122.2429
+     alcohol |  -21.08347   75.60748    -0.28   0.780    -169.3313    127.1644
+    nprevist |   29.60254   2.898385    10.21   0.000     23.91951    35.28557
+   unmarried |  -187.1332   26.00749    -7.20   0.000    -238.1276   -136.1389
+       _cons |     3134.4     35.656    87.91   0.000     3064.487    3204.313
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. * 1 
+. reg birthweight smoker, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. *2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. *3 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. log using Lesh.D.Homework03.ECON2311.log, replace 
+log file already open
+r(604);
+
+end of do-file
+
+r(604);
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * 
+. 
+. 
+. 
+end of do-file
+
+. test smoker nprevist
+
+ ( 1)  smoker = 0
+ ( 2)  nprevist = 0
+
+       F(  2,  2995) =   57.98
+            Prob > F =    0.0000
+
+. test smoker alcohol 
+
+ ( 1)  smoker = 0
+ ( 2)  alcohol = 0
+
+       F(  2,  2995) =   21.79
+            Prob > F =    0.0000
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. estimates store m1, title(Model 1)
+
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. estimates store m1, title(Model 1)
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. estimates store m2, title(Model 2)
+
+. 
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. estimates store m3, title(Model 3)
+
+. 
+. estout m1 m2 m3
+command estout is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. estimates store m1, title(Model 1)
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. estimates store m2, title(Model 2)
+
+. 
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. estimates store m3, title(Model 3)
+
+. 
+. estat acplot m1 m2 m3
+estat acplot not valid
+r(321);
+
+end of do-file
+
+r(321);
+
+. search estout
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. estimates store m1, title(Model 1)
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. estimates store m2, title(Model 2)
+
+. 
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. estimates store m3, title(Model 3)
+
+. 
+. estout acplot m1 m2 m3
+command estout is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. estout acplot m1 m2 m3
+command estout is unrecognized
+r(199);
+
+. 
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+command outreg is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. search outreg
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata *****
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+(note: file HW3.doc not found)
+                            -----------------------
+                                      birthweight 
+                            -----------------------
+                             smoker    -253.228   
+                                       (9.45)**   
+                             _cons     3,432.060  
+                                      (288.64)**  
+                             R2          0.03     
+                             N           3,000    
+                            -----------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge
+
+                     --------------------------------------
+                                 birthweight  birthweight 
+                     --------------------------------------
+                      smoker      -253.228     -217.580   
+                                  (9.45)**     (8.33)**   
+                      alcohol                   -30.491   
+                                                (0.42)    
+                      nprevist                  34.070    
+                                               (9.44)**   
+                      _cons       3,432.060    3,051.249  
+                                 (288.64)**    (69.80)**  
+                      R2            0.03         0.07     
+                      N             3,000        3,000    
+                     --------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge 
+
+              ----------------------------------------------------
+                           birthweight  birthweight  birthweight 
+              ----------------------------------------------------
+               smoker       -253.228     -217.580     -175.377   
+                            (9.45)**     (8.33)**     (6.54)**   
+               alcohol                    -30.491      -21.083   
+                                          (0.42)       (0.29)    
+               nprevist                   34.070       29.603    
+                                         (9.44)**     (8.26)**   
+               unmarried                              -187.133   
+                                                      (6.76)**   
+               _cons        3,432.060    3,051.249    3,134.400  
+                           (288.64)**    (69.80)**    (71.00)**  
+               R2             0.03         0.07         0.09     
+               N              3,000        3,000        3,000    
+              ----------------------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. search outreg
+
+. help outreg_complete
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata w/ outreg command *****
+. * Downloaded command using search outreg and tutorial on how to run command on
+>  UCLA Stata website.
+. 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg_complete using HW3.doc, replace
+command outreg_complete is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata w/ outreg command *****
+. * Downloaded command using search outreg and tutorial on how to run command on
+>  UCLA Stata website.
+. 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+
+                            -----------------------
+                                      birthweight 
+                            -----------------------
+                             smoker    -253.228   
+                                       (9.45)**   
+                             _cons     3,432.060  
+                                      (288.64)**  
+                             R2          0.03     
+                             N           3,000    
+                            -----------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge
+
+                     --------------------------------------
+                                 birthweight  birthweight 
+                     --------------------------------------
+                      smoker      -253.228     -217.580   
+                                  (9.45)**     (8.33)**   
+                      alcohol                   -30.491   
+                                                (0.42)    
+                      nprevist                  34.070    
+                                               (9.44)**   
+                      _cons       3,432.060    3,051.249  
+                                 (288.64)**    (69.80)**  
+                      R2            0.03         0.07     
+                      N             3,000        3,000    
+                     --------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge 
+
+              ----------------------------------------------------
+                           birthweight  birthweight  birthweight 
+              ----------------------------------------------------
+               smoker       -253.228     -217.580     -175.377   
+                            (9.45)**     (8.33)**     (6.54)**   
+               alcohol                    -30.491      -21.083   
+                                          (0.42)       (0.29)    
+               nprevist                   34.070       29.603    
+                                         (9.44)**     (8.26)**   
+               unmarried                              -187.133   
+                                                      (6.76)**   
+               _cons        3,432.060    3,051.249    3,134.400  
+                           (288.64)**    (69.80)**    (71.00)**  
+               R2             0.03         0.07         0.09     
+               N              3,000        3,000        3,000    
+              ----------------------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. * It can be seen with the table, that with more control variables added, R^2 i
+> ncreases. After plugging in for the adjusted R^2 as well, the same effect can 
+> be seen. As more variables are added to the regression, the higher and more ef
+> fective R^2 becomes. This effect of effectiveness when adding control variable
+> s to the regression can be seen in the CIs generated in part b. of the problem
+> . As more and more contorl variables are added, the CIs for smoking decrease, 
+> along with the magnitude of its coefficient. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata w/ outreg command *****
+. * Downloaded command using search outreg and tutorial on how to run command on
+>  UCLA Stata website.
+. 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+
+                            -----------------------
+                                      birthweight 
+                            -----------------------
+                             smoker    -253.228   
+                                       (9.45)**   
+                             _cons     3,432.060  
+                                      (288.64)**  
+                             R2          0.03     
+                             N           3,000    
+                            -----------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge
+
+                     --------------------------------------
+                                 birthweight  birthweight 
+                     --------------------------------------
+                      smoker      -253.228     -217.580   
+                                  (9.45)**     (8.33)**   
+                      alcohol                   -30.491   
+                                                (0.42)    
+                      nprevist                  34.070    
+                                               (9.44)**   
+                      _cons       3,432.060    3,051.249  
+                                 (288.64)**    (69.80)**  
+                      R2            0.03         0.07     
+                      N             3,000        3,000    
+                     --------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge 
+
+              ----------------------------------------------------
+                           birthweight  birthweight  birthweight 
+              ----------------------------------------------------
+               smoker       -253.228     -217.580     -175.377   
+                            (9.45)**     (8.33)**     (6.54)**   
+               alcohol                    -30.491      -21.083   
+                                          (0.42)       (0.29)    
+               nprevist                   34.070       29.603    
+                                         (9.44)**     (8.26)**   
+               unmarried                              -187.133   
+                                                      (6.76)**   
+               _cons        3,432.060    3,051.249    3,134.400  
+                           (288.64)**    (69.80)**    (71.00)**  
+               R2             0.03         0.07         0.09     
+               N              3,000        3,000        3,000    
+              ----------------------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. * It can be seen with the table, that with more control variables added, R^2 i
+> ncreases. After plugging in for the adjusted R^2 as well, the same effect can 
+> be seen. As more variables are added to the regression, the higher and more ef
+> fective R^2 becomes. This effect of effectiveness when adding control variable
+> s to the regression can be seen in the CIs generated in part b. of the problem
+> . As more and more contorl variables are added, the CIs for smoking decrease, 
+> along with the magnitude of its coefficient. With this, the reasonable 95% CI 
+> for the effect of smoking on birthweight is regression (3). 
+. *********************
+. 
+. *********************
+. * g. Construct a joint hypothesis test of Smoker and Alcohol. Test your hypoth
+> esis using an F-test and a 95% significance level.
+. 
+. test smoker alcohol 
+
+ ( 1)  smoker = 0
+ ( 2)  alcohol = 0
+
+       F(  2,  2995) =   21.79
+            Prob > F =    0.0000
+
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata w/ outreg command *****
+. * Downloaded command using search outreg and tutorial on how to run command on
+>  UCLA Stata website.
+. 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+
+                            -----------------------
+                                      birthweight 
+                            -----------------------
+                             smoker    -253.228   
+                                       (9.45)**   
+                             _cons     3,432.060  
+                                      (288.64)**  
+                             R2          0.03     
+                             N           3,000    
+                            -----------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge
+
+                     --------------------------------------
+                                 birthweight  birthweight 
+                     --------------------------------------
+                      smoker      -253.228     -217.580   
+                                  (9.45)**     (8.33)**   
+                      alcohol                   -30.491   
+                                                (0.42)    
+                      nprevist                  34.070    
+                                               (9.44)**   
+                      _cons       3,432.060    3,051.249  
+                                 (288.64)**    (69.80)**  
+                      R2            0.03         0.07     
+                      N             3,000        3,000    
+                     --------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge 
+
+              ----------------------------------------------------
+                           birthweight  birthweight  birthweight 
+              ----------------------------------------------------
+               smoker       -253.228     -217.580     -175.377   
+                            (9.45)**     (8.33)**     (6.54)**   
+               alcohol                    -30.491      -21.083   
+                                          (0.42)       (0.29)    
+               nprevist                   34.070       29.603    
+                                         (9.44)**     (8.26)**   
+               unmarried                              -187.133   
+                                                      (6.76)**   
+               _cons        3,432.060    3,051.249    3,134.400  
+                           (288.64)**    (69.80)**    (71.00)**  
+               R2             0.03         0.07         0.09     
+               N              3,000        3,000        3,000    
+              ----------------------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. * It can be seen with the table, that with more control variables added, R^2 i
+> ncreases. After plugging in for the adjusted R^2 as well, the same effect can 
+> be seen. As more variables are added to the regression, the higher and more ef
+> fective R^2 becomes. This effect of effectiveness when adding control variable
+> s to the regression can be seen in the CIs generated in part b. of the problem
+> . As more and more contorl variables are added, the CIs for smoking decrease, 
+> along with the magnitude of its coefficient. With this, the reasonable 95% CI 
+> for the effect of smoking on birthweight is regression (3). 
+. *********************
+. 
+. *********************
+. * g. Construct a joint hypothesis test of Smoker and Alcohol. Test your hypoth
+> esis using an F-test and a 95% significance level.
+. 
+. test smoker = alcohol 
+
+ ( 1)  smoker - alcohol = 0
+
+       F(  1,  2995) =    3.71
+            Prob > F =    0.0542
+
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. do "/var/folders/8y/56z_4nrd5_x4n9jtf87h01br0000gn/T//SD09267.000000"
+
+. clear
+
+. set more off
+
+. 
+. cd /Users/daniellesh/Desktop/ECON2311/Homework
+/Users/daniellesh/Desktop/ECON2311/Homework
+
+. 
+. ******************************************************************************
+> **
+. * Open growth.dta
+. use /Users/daniellesh/Desktop/ECON2311/Data/birthweight_smoking.dta
+
+. *********************
+. 
+. *********************
+. * 1 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. 
+. * 2 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. 
+. * 3
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. *********************
+. 
+. *********************
+. * a. What is the value of the estimated effect of smoking on birthweight in ea
+> ch of the regressions?
+. 
+. * Regression 1: Smoker est. affect = -253.2284
+. 
+. * Regression 2: Smoker est. affect = -217.5801
+. 
+. * Regression 3: Smoker est. affect = -175.3769
+. *********************
+. 
+. *********************
+. * b. Construct a 95% confidence interval for the effect of smoking on birthwei
+> ght, using each of the regressions.
+. 
+. * Regression 1:  
+. * -253.23 +/- 1.96(26.81)
+. * = (-305.797, -200.6597)
+. 
+. * Regression 2: 
+. * -217.58 +/- 1.96(26.11)
+. * = (-268.7708, -166.3894)
+. 
+. * Regression 3: 
+. * -175.38 +/- 1.96(26.83)
+. * = (-227.9777, -122.7761)
+. *********************
+. 
+. *********************
+. * c. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (1) to Smoker in regression (3), it can 
+> be seen that the variable suffers from omitted variable bias. This is because 
+> when examining the p-value of these other variables, they are statistically si
+> gnificant as well. Thus shows that regression (1) suffers from omitted variabl
+> e bias. 
+. *********************
+. 
+. *********************
+. * d. Does the coefficient on Smoker in regression (1) suffer from omitted vari
+> able bias? Explain.
+. 
+. * When comparing Smoker in regression (2) to Smoker in regression (3), it can 
+> also be seen that the variable suffers from omitted variable bias. This is bec
+> ause when examining the p-value of these other variables that are included in 
+> regression (3), they show an effect on birthweight as well. With this, it show
+> s regression (2) suffers from omitted variable bias. 
+. *********************
+. 
+. *********************
+. * e. Consider the coefficient on Unmarried in regression (3). 
+. 
+. * i. Construct a 95% confidence interval for the coefficient.
+. * -187.1332 +/- 1.96(27.677)
+. * = (-241.401, -132.865)
+. 
+. * ii. Is the coefficient statistically significant? Explain.
+. * Yes, the coefficient is statistically significant. This is because the P-val
+> ue is very low at 0.000. Along with this, the C.I. does not include zero, maki
+> ng it statistically significant as well. 
+. 
+. * iii. Is the magnitude of the coefficient large? Explain.
+. * Yes, the value of the coefficient is large at -187.1332. This shows that if 
+> the woman is unmarried, then the birthweight decreases by this magnitude. For 
+> weight, this is a considerably large magnitude. This shows that this magnitude
+>  is large for the coefficient. 
+. 
+. * iv. A family advocacy group notes that the large coefficient suggests that p
+> ublic policies that encourage marriage will lead, on average, to healthier bab
+> ies. Do you agree? (Hint: Review the discussion of control variables in Sectio
+> n 6.8 Discuss some of the various factors that Unmarried may be controlling fo
+> r and how this affects the interpretation of its coefficient.)
+. * From the given value of the coefficients, it can be clearly stated on averag
+> e that public policies that encourage marriages lead to overall healthier babi
+> es. I agree that this is the case. Although "Unmarried" indivudals can mean va
+> rious things, Unmarried individuals who have babies out of wedlock may not hav
+> e a "father-figure" for emotional, physical, and financial support of the chil
+> d. Not having this additional support can lead to much stress, resulting in a 
+> decreased of the birthweight of the child. This can also turn the individual t
+> o additional alcohol and smoking use while preganant, also affecting the child
+> 's birthweight. The control variable places specific constraints on the variab
+> les, but it is needed to show as to why some of these unhealthy actions may be
+>  taken by an individual while pregrant. 
+. *********************
+. 
+. *********************
+. * f. Consider the various other control variables in the data set. Which do yo
+> u think should be included in the regression? Using a table similar to Table 7
+> .1, examine the robustness of the confidence interval you constructed in (b). 
+> What is a reasonable 95% confidence interval for the effect of smoking on birt
+> hweight?
+. 
+. ***** Building Regression Table in Stata w/ outreg command *****
+. * Downloaded command using search outreg and tutorial on how to run command on
+>  UCLA Stata website.
+. 
+. reg birthweight smoker, robust
+
+Linear regression                               Number of obs     =      3,000
+                                                F(1, 2998)        =      89.21
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0286
+                                                Root MSE          =     583.73
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -253.2284   26.81039    -9.45   0.000     -305.797   -200.6597
+       _cons |    3432.06   11.89053   288.64   0.000     3408.746    3455.374
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, replace
+
+                            -----------------------
+                                      birthweight 
+                            -----------------------
+                             smoker    -253.228   
+                                       (9.45)**   
+                             _cons     3,432.060  
+                                      (288.64)**  
+                             R2          0.03     
+                             N           3,000    
+                            -----------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(3, 2996)        =      59.48
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0729
+                                                Root MSE          =     570.47
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -217.5801   26.10764    -8.33   0.000    -268.7708   -166.3894
+     alcohol |  -30.49129   72.59671    -0.42   0.675    -172.8357    111.8531
+    nprevist |   34.06991   3.608326     9.44   0.000     26.99487    41.14496
+       _cons |   3051.249   43.71445    69.80   0.000     2965.535    3136.962
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge
+
+                     --------------------------------------
+                                 birthweight  birthweight 
+                     --------------------------------------
+                      smoker      -253.228     -217.580   
+                                  (9.45)**     (8.33)**   
+                      alcohol                   -30.491   
+                                                (0.42)    
+                      nprevist                  34.070    
+                                               (9.44)**   
+                      _cons       3,432.060    3,051.249  
+                                 (288.64)**    (69.80)**  
+                      R2            0.03         0.07     
+                      N             3,000        3,000    
+                     --------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. reg birthweight smoker alcohol nprevist unmarried, robust 
+
+Linear regression                               Number of obs     =      3,000
+                                                F(4, 2995)        =      56.09
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0886
+                                                Root MSE          =      565.7
+
+------------------------------------------------------------------------------
+             |               Robust
+ birthweight |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smoker |  -175.3769    26.8268    -6.54   0.000    -227.9777   -122.7761
+     alcohol |  -21.08347   72.99211    -0.29   0.773    -164.2032    122.0363
+    nprevist |   29.60254   3.582739     8.26   0.000     22.57766    36.62742
+   unmarried |  -187.1332   27.67715    -6.76   0.000    -241.4014   -132.8651
+       _cons |     3134.4   44.14857    71.00   0.000     3047.835    3220.965
+------------------------------------------------------------------------------
+
+. outreg using HW3.doc, merge 
+
+              ----------------------------------------------------
+                           birthweight  birthweight  birthweight 
+              ----------------------------------------------------
+               smoker       -253.228     -217.580     -175.377   
+                            (9.45)**     (8.33)**     (6.54)**   
+               alcohol                    -30.491      -21.083   
+                                          (0.42)       (0.29)    
+               nprevist                   34.070       29.603    
+                                         (9.44)**     (8.26)**   
+               unmarried                              -187.133   
+                                                      (6.76)**   
+               _cons        3,432.060    3,051.249    3,134.400  
+                           (288.64)**    (69.80)**    (71.00)**  
+               R2             0.03         0.07         0.09     
+               N              3,000        3,000        3,000    
+              ----------------------------------------------------
+                              * p<0.05; ** p<0.01
+
+
+. 
+. * It can be seen with the table, that with more control variables added, R^2 i
+> ncreases. After plugging in for the adjusted R^2 as well, the same effect can 
+> be seen. As more variables are added to the regression, the higher and more ef
+> fective R^2 becomes. This effect of effectiveness when adding control variable
+> s to the regression can be seen in the CIs generated in part b. of the problem
+> . As more and more contorl variables are added, the CIs for smoking decrease, 
+> along with the magnitude of its coefficient. With this, the reasonable 95% CI 
+> for the effect of smoking on birthweight is regression (3). 
+. *********************
+. 
+. *********************
+. * g. Construct a joint hypothesis test of Smoker and Alcohol. Test your hypoth
+> esis using an F-test and a 95% significance level.
+. 
+. test smoker alcohol 
+
+ ( 1)  smoker = 0
+ ( 2)  alcohol = 0
+
+       F(  2,  2995) =   21.79
+            Prob > F =    0.0000
+
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. 
+. *********************
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+end of do-file
+
+. test smoker = alcohol 
+
+ ( 1)  smoker - alcohol = 0
+
+       F(  1,  2995) =    3.71
+            Prob > F =    0.0542
+
+. log close
+      name:  <unnamed>
+       log:  /Users/daniellesh/Desktop/ECON2311/Homework/Lesh.D.Homework02.ECON2
+> 311.log
+  log type:  text
+ closed on:  30 Nov 2020, 23:41:26
+--------------------------------------------------------------------------------
